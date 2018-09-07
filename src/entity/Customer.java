@@ -98,7 +98,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer: " + "id=" + id + ", name=" + name + ", surname=" + surname + ", money=" + money + '}';
+        return "Покупатель №" + " " + id + ". " + name + " " + surname + ", имеет " + money + " евро "+ ' ';
     }
     
     

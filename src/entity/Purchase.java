@@ -108,7 +108,9 @@ public class Purchase {
 
     @Override
     public String toString() {
-        return "ПОКУПКА: " + "id=" + id + ", product=" + product.toString() + ", customer=" + customer.getName() + customer.getSurname() +", date=" + transactionDate.toString() + ", quantity=" + quantity + '}';
+        return "ПОКУПКА №:" + " " + id + "." + product.toString() + ".Покупатель - " + customer.getName() + customer.getSurname() +", date=" + transactionDate.toString() + ",в количестве" + quantity + '}';
     }
+
+   
     
 }

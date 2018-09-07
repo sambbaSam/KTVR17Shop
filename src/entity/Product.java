@@ -98,7 +98,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{: " + "id=" + id + ", name=" + name + ", price=" + price + ", count=" + count + '}';
+        return "Товар №:" + " " + id + ". " + name + ". Цена" + price + ". Количество " + count+ " шт. " + ' ';
     }
     
 }
