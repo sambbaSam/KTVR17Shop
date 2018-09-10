@@ -5,6 +5,7 @@
  */
 package ktvr17shop;
 
+import classes.CustomerCreator;
 import entity.Customer;
 import entity.Product;
 import java.util.ArrayList;
@@ -29,33 +30,34 @@ public class App {
             System.out.println("0 - для выхода из программы");
             System.out.println("1 - для добавления товара");
             System.out.println("2 - для добавления покупателя");
-            System.out.println("3 - для записи покупки");
+            System.out.println("3 - история произведенных покупок");
             String action = scanner.next();
 
-//            switch (action) {
-//                case "0":
-//                    repeat = "n";
-//                    break;
+            switch (action) {
+                case "0":
+                    repeat = "n";
+                    break;
 //                case "1":
-//                    this.products.add(inserter.addProduct());
-//                    saver.saveProduct(products);
-//                    System.out.println("Товар добавлен!");
-//                    break;
-//                case "2":
 //                    this.customers.add(inserter.addCustomer());
 //                    saver.saveCustomer(customers);
 //                    System.out.println("Покупатель добавлен!");
-//                    break; 
+//                    break;
+                case "2":
+                    CustomerCreator customerCreator = new CustomerCreator();
+                    customers.add(customerCreator.add());
+                    System.out.println("Товар добавлен!");
+                    break;
+                 
 //                case "3":
 //                    this.purchases.add(inserter.purchaseProduct(customers,products));
 //                    saver.savePuschase(purchases);
 //                    System.out.println("Товар продан покупателю.");
 //                    break;
-//                default:
-//                    System.out.println("Выберите действие из списка!");
-//                    System.out.println("----------------------------");
-//                    repeat="r";
-//            }
+                default:
+                    System.out.println("Выберите действие из списка!");
+                    System.out.println("----------------------------");
+                    repeat="r";
+            }
         
         }while("r".equals(repeat));
     }

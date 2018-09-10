@@ -12,6 +12,8 @@ import entity.Customer;
  * @author pupil
  */
 public class CustomerCreator {
+
+//    public Customer returnNewCustomer;
     
     public Customer add(){
         
