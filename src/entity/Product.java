@@ -5,13 +5,14 @@
  */
 package entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author pupil
  */
-public class Product {
+public class Product implements Serializable{
     private Long id;
     private String name;
     private Integer price;
@@ -20,7 +21,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long id, String name, Integer price, Integer count) {
+    public Product (Long id, String name, Integer price, Integer count) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -98,7 +99,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Товар №:" + " " + id + ". " + name + ". Цена" + price + ". Количество " + count+ " шт. " + ' ';
+        return "Товар №:" + id + ". " + name + ". Цена - " + price + ". Количество на складе " + count+ " шт. " + ' ';
     }
     
 }

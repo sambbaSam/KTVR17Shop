@@ -1,5 +1,6 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
@@ -7,7 +8,7 @@ import java.util.Objects;
  *
  * @author pupil
  */
-public class Purchase {
+public class Purchase implements Serializable{
     private Long id;
     private Product product;
     private Customer customer;
@@ -108,7 +109,7 @@ public class Purchase {
 
     @Override
     public String toString() {
-        return "ПОКУПКА №:" + " " + id + "." + product.toString() + ".Покупатель - " + customer.getName() + customer.getSurname() +", date=" + transactionDate.toString() + ",в количестве" + quantity + '}';
+        return "ПОКУПКА №:" + id + ". " + product.toString() + " Покупатель - " + customer.getName() + customer.getSurname() +", date=" + transactionDate.toString() + ", купил в количестве " + quantity + " шт"+' ';
     }
 
    

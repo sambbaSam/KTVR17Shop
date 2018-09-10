@@ -5,13 +5,14 @@
  */
 package entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author pupil
  */
-public class Customer {
+public class Customer implements Serializable {
     private Long id;
     private String name;
     private String surname;
@@ -98,7 +99,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Покупатель №" + " " + id + ". " + name + " " + surname + ", имеет " + money + " евро "+ ' ';
+        return "Покупатель №:"+ id + ". " + name + " " + surname + ", имеет " + money + " евро "+ ' ';
     }
     
     
