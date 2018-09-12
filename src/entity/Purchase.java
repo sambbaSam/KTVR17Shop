@@ -12,17 +12,17 @@ public class Purchase implements Serializable{
     private Long id;
     private Product product;
     private Customer customer;
-    private Date transactionDate;
+    private Date saleProduct;
     private Integer quantity;
 
     public Purchase() {
     }
 
-    public Purchase(Long id, Product product, Customer customer, Date transactionDate, Integer quantity) {
+    public Purchase(Long id, Product product, Customer customer, Date saleProduct, Integer quantity) {
         this.id = id;
         this.product = product;
         this.customer = customer;
-        this.transactionDate = transactionDate;
+        this.saleProduct = saleProduct;
         this.quantity = quantity;
     }
 
@@ -59,11 +59,11 @@ public class Purchase implements Serializable{
     }
 
     public Date getDate() {
-        return transactionDate;
+        return saleProduct;
     }
 
-    public void setDate(Date transactionDate) {
-        this.transactionDate = transactionDate;
+    public void setDate(Date saleProduct) {
+        this.saleProduct = saleProduct;
     }
 
     @Override
@@ -72,7 +72,7 @@ public class Purchase implements Serializable{
         hash = 53 * hash + Objects.hashCode(this.id);
         hash = 53 * hash + Objects.hashCode(this.product);
         hash = 53 * hash + Objects.hashCode(this.customer);
-        hash = 53 * hash + Objects.hashCode(this.transactionDate);
+        hash = 53 * hash + Objects.hashCode(this.saleProduct);
         hash = 53 * hash + Objects.hashCode(this.quantity);
         return hash;
     }
@@ -98,7 +98,7 @@ public class Purchase implements Serializable{
         if (!Objects.equals(this.customer, other.customer)) {
             return false;
         }
-        if (!Objects.equals(this.transactionDate, other.transactionDate)) {
+        if (!Objects.equals(this.saleProduct, other.saleProduct)) {
             return false;
         }
         if (!Objects.equals(this.quantity, other.quantity)) {
@@ -109,7 +109,7 @@ public class Purchase implements Serializable{
 
     @Override
     public String toString() {
-        return "ПОКУПКА №:" + id + ". " + product.toString() + " Покупатель - " + customer.getName() + customer.getSurname() +", date=" + transactionDate.toString() + ", купил в количестве " + quantity + " шт"+' ';
+        return "ПОКУПКА №:" + id + ". " + product.toString() + " Покупатель - " + customer.getName() + customer.getSurname() +", date=" + saleProduct.toString() + ", купил в количестве " + quantity + " шт"+' ';
     }
 
    

@@ -8,6 +8,7 @@ package ktvr17shop;
 import classes.CustomerCreator;
 import entity.Customer;
 import entity.Product;
+import entity.Purchase;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -19,7 +20,7 @@ import java.util.Scanner;
 public class App {
     public List<Customer> customers = new ArrayList<>();
     public List<Product> products = new ArrayList<>();
-//    public List<Puschase> purchases = new ArrayList<>();
+    public List<Purchase> purchases = new ArrayList<>();
 //    public Insertable inserter = new ConsoleInserter();
     public void run(){
         Scanner scanner = new Scanner(System.in);
