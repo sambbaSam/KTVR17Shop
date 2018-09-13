@@ -39,8 +39,10 @@ public class PurchaseHistoryCreator {
         int numberCustomer = scanner.nextInt();
         Customer customer = customers.get(numberCustomer-1);
         Calendar c = new GregorianCalendar();
-        Purchase purchase = new Purchase(null, product, customer, c.getTime(), countProducts);//new Purchase(null, product, customer, null, countProducts);//(null, customer, product, c.getTime());
-        return purchase;
-
+        Purchase purchase = new Purchase(null, product, customer, c.getTime(), countProducts);
+//        customer.setMoney(customer.getMoney()-purchase.getProduct().getPrice()*purchase.getQuantity());
+//        product.setCount(product.getCount()-purchase.getQuantity());
+//        System.out.println(purchase.toString()); 
+        return purchase;        
     }
 }

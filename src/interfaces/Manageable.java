@@ -14,5 +14,5 @@ public interface Manageable {
    public Customer addCustomer();
    public Product addProduct();
    public Purchase saleProduct(List<Customer> customers, List<Product>products); 
-
+   public void returnHistory(List<Purchase> purchases);
 }

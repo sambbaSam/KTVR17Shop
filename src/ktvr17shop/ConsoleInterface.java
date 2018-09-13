@@ -2,7 +2,9 @@
 package ktvr17shop;
 
 import classes.CustomerCreator;
+import classes.HistoryReturner;
 import classes.ProductCreator;
+import classes.ProductReturner;
 import classes.PurchaseHistoryCreator;
 import entity.Customer;
 import entity.Product;
@@ -34,5 +36,10 @@ public class ConsoleInterface implements Manageable{
         return purchaseHistoryCreator.add(customers, products);
         }
 
-    
+    @Override
+    public void returnHistory(List<Purchase> purchases) {
+       HistoryReturner historyReturner = new HistoryReturner();
+        historyReturner.printListWhoTookProducts(purchases);
+    }
+
 }

@@ -5,8 +5,6 @@ import entity.Purchase;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-
-
 /**
  *
  * @author Sanata
@@ -18,12 +16,12 @@ public class HistoryReturner {
         int countPurchases = purchases.size();
         for(int i=0; i<countPurchases; i++){
             Purchase p = purchases.get(i);
-            if(p.getProduct()==null){
+//            if(p.getProduct()==null){//
                 System.out.println(i + 1 + ". "+p.getProduct().getName()+
                         ". Купил: " + p.getCustomer().getName()+
                         " " + p.getCustomer().getSurname()+
                         ". Числа " + sdfDate.format(p.getSaleProduct()));
-            }
+//            }//
         }
     }
 }

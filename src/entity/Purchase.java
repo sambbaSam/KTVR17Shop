@@ -111,6 +111,7 @@ public class Purchase implements Serializable{
     public String toString() {
 //        return "Purchase{" + "id=" + id + ", product=" + product + ", customer=" + customer + ", saleProduct=" + saleProduct + ", quantity=" + quantity + '}';
           return "ПОКУПКА №:" + id + ". " + product.toString() + " Покупатель - " + customer.getName() + customer.getSurname() +", date=" + saleProduct.toString() + ", купил в количестве " + quantity + " шт"+' ';
-   }
+//    
+    }
     
 }

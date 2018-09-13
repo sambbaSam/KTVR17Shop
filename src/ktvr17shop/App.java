@@ -31,7 +31,8 @@ public class App {
             System.out.println("0 - для выхода из программы");
             System.out.println("1 - для добавления товара");
             System.out.println("2 - для добавления покупателя");
-            System.out.println("3 - история произведенных покупок");
+            System.out.println("3 - продажв товара");
+            System.out.println("4 - история произведенных покупок");
             String action = scanner.next();
 
             switch (action) {
@@ -39,23 +40,20 @@ public class App {
                     repeat = "n";
                     break;
                 case "1":
-//                    ProductCreator productCreator = new ProductCreator();
-//                    products.add(productCreator.add());
                     products.add(manager.addProduct());
                     System.out.println("Товар добавлен!");
                     break;
                 case "2":
-//                    CustomerCreator customerCreator = new CustomerCreator();
-//                    customers.add(customerCreator.add());
                     customers.add(manager.addCustomer());
                     System.out.println("Покупатель добавлен!");
                     break;
                 case "3":
-//                    PurchaseHistoryCreator purchaseHistoryCreator = new PurchaseHistoryCreator();
-//                    purchases.add(purchaseHistoryCreator.add(customers, products));
                     purchases.add(manager.saleProduct(customers, products));
                     System.out.println("Товар продан покупателю.");
                     break;
+                case "4":
+                    manager.returnHistory(purchases);
+                    break; 
                 default:
                     System.out.println("Выберите действие из списка!");
                     System.out.println("----------------------------");
