@@ -22,9 +22,9 @@ public class ProductCreator {
         System.out.println("Наименование продукта:");
         product.setName(scanner.nextLine());
         System.out.println("Цена: ");
-        product.setPrice(Integer.SIZE);
+        product.setPrice(scanner.nextInt(Integer.SIZE));
         System.out.println("Количество:");
-        product.setCount(Integer.SIZE);
+        product.setCount(scanner.nextInt(Integer.SIZE));
     return product;
     }
 }
