@@ -5,8 +5,10 @@
  */
 package ktvr17shop;
 
+
 import classes.CustomerCreator;
 import classes.ProductCreator;
+import classes.PurchaseHistoryCreator;
 import entity.Customer;
 import entity.Product;
 import entity.Purchase;
@@ -30,20 +32,12 @@ public class ConsoleInterface implements Manageable{
        ProductCreator productCreator = new ProductCreator();
         return productCreator.add();
     }
-
+    
     @Override
-    public Purchase purchaseProduct(List<Customer> customers, List<Product> products) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        public Purchase saleProduct(List<Customer> customers, List<Product> products) {
+        PurchaseHistoryCreator purchaseHistoryCreator = new PurchaseHistoryCreator();
+        return purchaseHistoryCreator.add(customers, products);
+        }
 
-    @Override
-    public Purchase saleProduct(List<Purchase> purchases) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Purchase insertCustomer(List<Purchase> purchases) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

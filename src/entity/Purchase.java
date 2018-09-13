@@ -26,14 +26,6 @@ public class Purchase implements Serializable{
         this.quantity = quantity;
     }
 
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
     public Long getId() {
         return id;
     }
@@ -58,22 +50,30 @@ public class Purchase implements Serializable{
         this.customer = customer;
     }
 
-    public Date getDate() {
+    public Date getSaleProduct() {
         return saleProduct;
     }
 
-    public void setDate(Date saleProduct) {
+    public void setSaleProduct(Date saleProduct) {
         this.saleProduct = saleProduct;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.id);
-        hash = 53 * hash + Objects.hashCode(this.product);
-        hash = 53 * hash + Objects.hashCode(this.customer);
-        hash = 53 * hash + Objects.hashCode(this.saleProduct);
-        hash = 53 * hash + Objects.hashCode(this.quantity);
+        hash = 97 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.product);
+        hash = 97 * hash + Objects.hashCode(this.customer);
+        hash = 97 * hash + Objects.hashCode(this.saleProduct);
+        hash = 97 * hash + Objects.hashCode(this.quantity);
         return hash;
     }
 
@@ -109,9 +109,8 @@ public class Purchase implements Serializable{
 
     @Override
     public String toString() {
-        return "ПОКУПКА №:" + id + ". " + product.toString() + " Покупатель - " + customer.getName() + customer.getSurname() +", date=" + saleProduct.toString() + ", купил в количестве " + quantity + " шт"+' ';
-    }
-
-   
+//        return "Purchase{" + "id=" + id + ", product=" + product + ", customer=" + customer + ", saleProduct=" + saleProduct + ", quantity=" + quantity + '}';
+          return "ПОКУПКА №:" + id + ". " + product.toString() + " Покупатель - " + customer.getName() + customer.getSurname() +", date=" + saleProduct.toString() + ", купил в количестве " + quantity + " шт"+' ';
+   }
     
 }

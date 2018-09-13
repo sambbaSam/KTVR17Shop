@@ -8,6 +8,7 @@ package classes;
 import entity.Customer;
 import entity.Product;
 import entity.Purchase;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -38,7 +39,7 @@ public class PurchaseHistoryCreator {
         int numberCustomer = scanner.nextInt();
         Customer customer = customers.get(numberCustomer-1);
         Calendar c = new GregorianCalendar();
-        Purchase purchase = new Purchase(null, product, customer, null, countProducts);//(null, customer, product, c.getTime());
+        Purchase purchase = new Purchase(null, product, customer, c.getTime(), countProducts);//new Purchase(null, product, customer, null, countProducts);//(null, customer, product, c.getTime());
         return purchase;
 
     }

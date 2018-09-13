@@ -5,10 +5,14 @@
  */
 package ktvr17shop;
 
+
 import classes.CustomerCreator;
+import classes.ProductCreator;
+import classes.PurchaseHistoryCreator;
 import entity.Customer;
 import entity.Product;
 import entity.Purchase;
+import interfaces.Manageable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -21,7 +25,7 @@ public class App {
     public List<Customer> customers = new ArrayList<>();
     public List<Product> products = new ArrayList<>();
     public List<Purchase> purchases = new ArrayList<>();
-//    public Insertable inserter = new ConsoleInserter();
+    private Manageable manager = new ConsoleInterface();
     public void run(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("--------Мой магазин----------");
@@ -38,22 +42,24 @@ public class App {
                 case "0":
                     repeat = "n";
                     break;
-//                case "1":
-//                    this.customers.add(inserter.addCustomer());
-//                    saver.saveCustomer(customers);
-//                    System.out.println("Покупатель добавлен!");
-//                    break;
-                case "2":
-                    CustomerCreator customerCreator = new CustomerCreator();
-                    customers.add(customerCreator.add());
+                case "1":
+//                    ProductCreator productCreator = new ProductCreator();
+//                    products.add(productCreator.add());
+                    products.add(manager.addProduct());
                     System.out.println("Товар добавлен!");
                     break;
-                 
-//                case "3":
-//                    this.purchases.add(inserter.purchaseProduct(customers,products));
-//                    saver.savePuschase(purchases);
-//                    System.out.println("Товар продан покупателю.");
-//                    break;
+                case "2":
+//                    CustomerCreator customerCreator = new CustomerCreator();
+//                    customers.add(customerCreator.add());
+                    customers.add(manager.addCustomer());
+                    System.out.println("Покупатель добавлен!");
+                    break;
+                case "3":
+//                    PurchaseHistoryCreator purchaseHistoryCreator = new PurchaseHistoryCreator();
+//                    purchases.add(purchaseHistoryCreator.add(customers, products));
+                    purchases.add(manager.saleProduct(customers, products));
+                    System.out.println("Товар продан покупателю.");
+                    break;
                 default:
                     System.out.println("Выберите действие из списка!");
                     System.out.println("----------------------------");

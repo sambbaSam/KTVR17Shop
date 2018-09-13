@@ -10,14 +10,15 @@ import entity.Product;
 import entity.Purchase;
 import java.util.List;
 
+
+
 /**
  *
- * @author pupil
+ * @author Sanata
  */
 public interface Manageable {
    public Customer addCustomer();
-    public Product addProduct();
-    public Purchase purchaseProduct(List<Customer> customers, List<Product>products);
-    public Purchase saleProduct(List<Purchase> purchases); 
-    public Purchase insertCustomer(List<Purchase> purchases);
+   public Product addProduct();
+   public Purchase saleProduct(List<Customer> customers, List<Product>products); 
+
 }
