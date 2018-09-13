@@ -25,7 +25,7 @@ public class CustomerCreator {
         System.out.println("Фамилия: ");
         customer.setSurname(scanner.nextLine());
         System.out.println("Кошелек: ");
-        customer.setMoney(Integer.SIZE);
+        customer.setMoney(scanner.nextInt(Integer.SIZE));
         return customer;
     }
 }
