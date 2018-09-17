@@ -15,7 +15,7 @@ public class CustomerCreator {
 
 //    public Customer returnNewCustomer;
     
-    public Customer add(){
+    public Customer returnNewCustomer(){
         
         Customer customer = new Customer();
         Scanner scanner = new Scanner(System.in);
@@ -26,6 +26,7 @@ public class CustomerCreator {
         customer.setSurname(scanner.nextLine());
         System.out.println("Кошелек: ");
         customer.setMoney(scanner.nextInt(Integer.SIZE));
+        System.out.println("----Покупатель добавлен----");
         return customer;
     }
 }

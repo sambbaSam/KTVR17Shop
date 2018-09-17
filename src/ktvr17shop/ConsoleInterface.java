@@ -19,13 +19,13 @@ import java.util.List;
 public class ConsoleInterface implements Manageable{
 
     @Override
-    public Customer addCustomer() {
+    public Customer createCustomer() {
         CustomerCreator customerCreator = new CustomerCreator();
-        return customerCreator.add();
+        return customerCreator.returnNewCustomer();
     }
 
     @Override
-    public Product addProduct() {
+    public Product createProduct() {
        ProductCreator productCreator = new ProductCreator();
         return productCreator.add();
     }
@@ -33,7 +33,7 @@ public class ConsoleInterface implements Manageable{
     @Override
         public Purchase saleProduct(List<Customer> customers, List<Product> products) {
         PurchaseHistoryCreator purchaseHistoryCreator = new PurchaseHistoryCreator();
-        return purchaseHistoryCreator.add(customers, products);
+        return purchaseHistoryCreator.returnNewHistory(customers, products);
         }
 
     @Override
@@ -42,4 +42,12 @@ public class ConsoleInterface implements Manageable{
         historyReturner.printListWhoTookProducts(purchases);
     }
 
+    @Override
+    public Purchase returnPurchase(List<Purchase> purchases) {
+        ProductReturner productReturner = new ProductReturner();
+        return productReturner.returnPurchase(purchases);
+  
+    }
+
+   
 }

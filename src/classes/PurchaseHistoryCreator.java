@@ -19,7 +19,7 @@ import java.util.Scanner;
  * @author Sanata
  */
 public class PurchaseHistoryCreator {
-   public Purchase add(List<Customer> customers, List<Product> products){
+   public Purchase returnNewHistory(List<Customer> customers, List<Product> products){
        System.out.println("-----Продажа товара------");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Список товаров: ");

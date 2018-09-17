@@ -11,8 +11,9 @@ import java.util.List;
  * @author Sanata
  */
 public interface Manageable {
-   public Customer addCustomer();
-   public Product addProduct();
-   public Purchase saleProduct(List<Customer> customers, List<Product>products); 
+   public Customer createCustomer();
+   public Product createProduct();
+   public Purchase saleProduct(List<Customer> customers, List<Product>products);
+    public Purchase returnPurchase(List<Purchase> purchases); //postuplenie producta na sklad
    public void returnHistory(List<Purchase> purchases);
 }
