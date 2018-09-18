@@ -1,28 +1,20 @@
-
 package ktvr17shop;
 
-
-import classes.CustomerCreator;
-import classes.ProductCreator;
-import classes.PurchaseHistoryCreator;
 import entity.Customer;
 import entity.Product;
 import entity.Purchase;
-//import static entity.Purchase_.product;
 import interfaces.Manageable;
 import interfaces.Retentive;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 /**
  *
  * @author Sanata
  */
 public class App {
-    public List<Customer> customers = new ArrayList<>();
-    public List<Product> products = new ArrayList<>();
-    public List<Purchase> purchases = new ArrayList<>();
+    private List<Customer> customers;
+    private List<Product> products;
+    private List<Purchase> purchases;
     private Manageable manager = new ConsoleInterface();
     private Retentive saver = new PersistToDatabase();
     
@@ -34,7 +26,7 @@ public class App {
     
     public void run(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("--------Мой магазин----------");
+        System.out.println("--------МОЙ МАГАЗИН----------");
         String repeat = "r";
         do{
             System.out.println("Выберите нужное действие:");
@@ -42,8 +34,8 @@ public class App {
             System.out.println("1 - для добавления товара");
             System.out.println("2 - для добавления покупателя");
             System.out.println("3 - продажв товара");
-            System.out.println("4 - postuplenie na sklad товара");
-            System.out.println("5 - история произведенных покупок");
+            System.out.println("4 - история произведенных покупок/");
+            System.out.println("5 - поступление нп склад товара ");
             String action = scanner.next();
 
             switch (action) {
@@ -73,13 +65,11 @@ public class App {
                         purchases.add(purchase);
                         saver.savePurchase(purchase, false); 
                     }
-//                    purchases.add(manager.saleProduct(customers, products));
-//                    System.out.println("Товар продан покупателю.");
                     break;
-                    case "4":
-                    Purchase p = manager.returnPurchase(purchases);
-                    if(p != null){
-                        saver.savePurchase(p, true);
+                case "4":
+                    Purchase pur = manager.returnProduct(purchases);
+                    if(pur != null){
+                        saver.savePurchase(pur, true);//
                     }
                     break;
                 case "5":

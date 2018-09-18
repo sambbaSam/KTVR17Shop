@@ -16,22 +16,17 @@ import javax.persistence.Persistence;
  * @author Sanata
  */
 public class PersistToDatabase implements Retentive{
-    
     private final EntityManager em;
     private final EntityTransaction tx;
-    
-     public PersistToDatabase() {
+
+    public PersistToDatabase() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("KTVR17ShopPU");
         em = emf.createEntityManager();
         tx = em.getTransaction();
+
     }
 
-    @Override
-    public void freeResources() {
-       if(em != null) em.close();
-       
-    }
-    @Override
+        @Override
     public void saveCustomer(Customer customer) {
         tx.begin();
         em.persist(customer);
@@ -58,7 +53,7 @@ public class PersistToDatabase implements Retentive{
 
     @Override
     public List<Customer> loadCustomers() {
-        try {
+       try {
             return em.createQuery("SELECT c FROM Customer c").getResultList();
         } catch (Exception e) {
             return new ArrayList<Customer>();
@@ -76,13 +71,16 @@ public class PersistToDatabase implements Retentive{
 
     @Override
     public List<Purchase> loadPurchases() {
-        try {
+       try {
             return em.createQuery("SELECT pur FROM Purchase pur").getResultList();
         } catch (Exception e) {
             return new ArrayList<Purchase>();
         }
     }
 
-   
+    @Override
+    public void freeResources() {
+        if(em != null) em.close();
+    }
     
 }

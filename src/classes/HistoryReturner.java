@@ -1,10 +1,8 @@
-
 package classes;
 
 import entity.Purchase;
 import java.text.SimpleDateFormat;
 import java.util.List;
-
 /**
  *
  * @author Sanata
@@ -15,13 +13,13 @@ public class HistoryReturner {
         SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         int countPurchases = purchases.size();
         for(int i=0; i<countPurchases; i++){
-            Purchase p = purchases.get(i);
-//            if(p.getProduct()==null){//
-                System.out.println(i + 1 + ". "+p.getProduct().getName()+
-                        ". Купил: " + p.getCustomer().getName()+
-                        " " + p.getCustomer().getSurname()+
-                        ". Числа " + sdfDate.format(p.getSaleProduct()));
-//            }//
+            Purchase pur = purchases.get(i);
+            if(pur.getSaleProduct()==null){//
+                System.out.println(i+1+". "+pur.getProduct().getName()+
+                        ". Купил: " + pur.getCustomer().getName()+
+                        " " + pur.getCustomer().getSurname()+
+                        ". Числа " + sdfDate.format(pur.getSaleProduct()));
+            }//
         }
     }
 }

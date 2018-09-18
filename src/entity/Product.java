@@ -1,19 +1,16 @@
-
 package entity;
 
-import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 /**
  *
  * @author Sanata
  */
 @Entity
-public class Product implements Serializable{
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -102,7 +99,7 @@ public class Product implements Serializable{
 
     @Override
     public String toString() {
-        return "Товар №:" + id + ". " + name + ". Цена - " + price + ". Количество на складе " + count+ " шт. " + ' ';
+        return "Товар №:" + id + ". " + name + ". Цена - " + price + ". Количество " + count+ " шт. " + ' ';
     }
     
 }

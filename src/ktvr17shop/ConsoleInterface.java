@@ -27,11 +27,11 @@ public class ConsoleInterface implements Manageable{
     @Override
     public Product createProduct() {
        ProductCreator productCreator = new ProductCreator();
-        return productCreator.add();
+        return productCreator.returnNewProduct();
     }
     
     @Override
-        public Purchase saleProduct(List<Customer> customers, List<Product> products) {
+        public Purchase saleProduct(List<Customer> customers, List<Product> products) {// prodaza tovara
         PurchaseHistoryCreator purchaseHistoryCreator = new PurchaseHistoryCreator();
         return purchaseHistoryCreator.returnNewHistory(customers, products);
         }
@@ -43,9 +43,9 @@ public class ConsoleInterface implements Manageable{
     }
 
     @Override
-    public Purchase returnPurchase(List<Purchase> purchases) {
+    public Purchase returnProduct(List<Purchase> purchases) {
         ProductReturner productReturner = new ProductReturner();
-        return productReturner.returnPurchase(purchases);
+        return productReturner.returnProduct(purchases);
   
     }
 

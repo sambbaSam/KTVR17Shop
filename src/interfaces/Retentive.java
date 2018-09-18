@@ -1,11 +1,9 @@
-
 package interfaces;
 
 import entity.Customer;
 import entity.Product;
 import entity.Purchase;
 import java.util.List;
-
 /**
  *
  * @author Sanata

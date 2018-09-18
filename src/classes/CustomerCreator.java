@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package classes;
 
 import java.util.Scanner;
@@ -12,8 +8,6 @@ import entity.Customer;
  * @author pupil
  */
 public class CustomerCreator {
-
-//    public Customer returnNewCustomer;
     
     public Customer returnNewCustomer(){
         
@@ -25,7 +19,8 @@ public class CustomerCreator {
         System.out.println("Фамилия: ");
         customer.setSurname(scanner.nextLine());
         System.out.println("Кошелек: ");
-        customer.setMoney(scanner.nextInt(Integer.SIZE));
+        customer.setMoney(scanner.nextInt());//customer.setMoney(scanner.nextInt(Integer.SIZE));
+        System.out.println(customer.toString());
         System.out.println("----Покупатель добавлен----");
         return customer;
     }
